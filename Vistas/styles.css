@@ -1,0 +1,645 @@
+@charset "UTF-8";
+/*======== Contador de Horas Proyecto ========*/
+/*======== Formateo de la pagina ========*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #ffffff;
+}
+
+/*======== Definicion de variables ========*/
+/*=====================================
+====== REUTILIZACION DE CLASES =======
+======================================*/
+/* Textos */
+.format__title {
+  font-family: "Inter", sans-serif;
+  font-size: 4em;
+}
+
+.format__subtitle {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 2.2em;
+}
+
+.format__text {
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+}
+
+.format__uppercase {
+  text-transform: uppercase;
+}
+
+/* Filtro Imagenes */
+.filter__imgs {
+  filter: grayscale(30%) blur(1px) brightness(70%) contrast(104%);
+  -webkit-filter: grayscale(30%) blur(1px) brightness(70%) contrast(104%);
+}
+
+/* Formato paginas */
+.format__content {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.format__flex {
+  padding: 50px 0;
+  width: 90%;
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* GRID DE 3 COLUMNAS 
+Una clase principal y las sublclases en las que va el contenido del grid
+*/
+.container__steps {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(100px, 350px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, 350px));
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 25px;
+}
+
+/* GRID DOS COLUMNAS PRINCIPALES */
+.content__grid {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 600px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 600px));
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.content__grid .about__img img {
+  width: 100%;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.content__grid .box__about h2 {
+  font-size: 3em;
+}
+
+.content__grid .box__about .about__parrafo p {
+  padding: 15px 0;
+  text-align: justify;
+}
+
+.botones__estilo {
+  background: #16703c;
+  padding: 15px 50px;
+  border: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.botones__estilo:hover {
+  background-color: #86bd5f;
+  border: 1px solid;
+}
+
+/*======== Cabecera Presentacion ========*/
+.container__principal {
+  height: 100vh;
+  width: 100%;
+}
+
+.container__principal .content__img {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+.container__principal .content__img img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container__principal .content__principal {
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+.container__principal .content__principal .content__box {
+  width: 100%;
+}
+
+.container__principal .content__principal .content__box p:nth-child(1) {
+  position: absolute;
+  top: 100px;
+}
+
+.container__principal .content__principal .content__box .content__title {
+  text-align: center;
+}
+
+.container__principal .content__principal .content__box .content__title h1 {
+  padding: 20px 0;
+}
+
+.container__principal .content__principal .content__box .content__title p {
+  padding: 20px 0;
+  font-size: 1.8em;
+}
+
+/*======== Seccion Acerca de ========*/
+.container__about {
+  background-color: #16703c;
+}
+
+/*=====================================
+====== SECCION COMO FUNCIONA ==========
+======================================*/
+.funcion__movil {
+  position: relative;
+}
+
+.container__img {
+  width: 100%;
+  position: absolute;
+  z-index: 12;
+}
+
+.container__img img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container__funcion {
+  width: 100%;
+  position: relative;
+  z-index: 13;
+}
+
+.container__funcion .content__funcion {
+  width: 100%;
+}
+
+.container__funcion .content__funcion .title__funciona {
+  position: relative;
+  display: block;
+  width: 90%;
+}
+
+.container__funcion .content__funcion .title__funciona div h3 {
+  text-align: center;
+}
+
+/* Estilos particulares de la grilla como funciona*/
+.container__num-step {
+  text-align: center;
+  font-size: 1.8em;
+  margin: 30px 0;
+}
+
+.container__num-step p {
+  background-color: #16703c;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.content__step p {
+  font-size: 1.5em;
+}
+
+/*=====================================
+   ======== SECCION PRECIOS =========
+======================================*/
+.container__precios {
+  background-color: #86bd5f;
+  /*ESTILOS PARTICULARES GRID PRECIOS */
+}
+
+.container__precios .content__precios {
+  width: 100%;
+  z-index: 30;
+}
+
+.container__precios .content__precios div {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container__precios .content__precios div .title__precios div {
+  margin-bottom: 7vh;
+}
+
+.container__precios .step__precios {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 450px;
+  padding: 25px;
+  background-image: url(img/pasta-dish.jpg);
+  background-size: cover;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.container__precios .step__precios .precio {
+  background-color: #fdfff4;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.container__precios .step__precios .precio p {
+  color: #000000;
+  padding: 15px 0;
+  font-size: 1.5em;
+}
+
+.container__precios .step__precios:nth-child(2) {
+  background-image: url(img/asian-vegetables.jpg);
+}
+
+.container__precios .step__precios:nth-child(3) {
+  background-image: url(img/vegan-food.jpg);
+}
+
+/*=====================================
+==== QUE HAY DENTRO DE CADA CAJA =====
+======================================*/
+.container__caja {
+  background-color: #fdfff4;
+}
+
+.box__caja {
+  margin-bottom: 80px;
+}
+
+.box__caja h2 {
+  font-size: 1.7em;
+  margin: 30px 0;
+  color: #000000;
+  font-weight: 100;
+}
+
+.box__caja ul {
+  padding: 0 0 0 45px;
+}
+
+.box__caja ul li {
+  font-size: 1.3em;
+  padding: 10px 0;
+  color: #000000;
+}
+
+.caja__img img {
+  width: 100%;
+  height: 500px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+/*=====================================
+=============== Reseñas ==============
+======================================*/
+.container__reseña {
+  background: #16703c;
+}
+
+.caja__reseña h4 {
+  padding-bottom: 50px;
+}
+
+.content__reseña div {
+  height: auto;
+}
+
+.reseñas__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 50px;
+}
+
+.reseñas__flex div p {
+  padding: 20px;
+}
+
+/*=====================================
+========= Kits de comida CTM =========
+======================================*/
+.container__kit {
+  background-color: #86bd5f;
+  /*ESTILOS PARTICULARES GRID PRECIOS */
+}
+
+.container__kit .content__kit {
+  width: 100%;
+}
+
+.container__kit .content__kit div {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container__kit .content__kit div .kit__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px 25px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container__kit .content__kit div .kit__flex p {
+  font-size: 1.1em;
+}
+
+.container__kit .content__kit div .kit__flex div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container__kit .step__kit {
+  background-color: #ffffff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.container__kit .step__kit .kit {
+  padding: 20px 0;
+}
+
+.container__kit .step__kit .kit img {
+  width: 100%;
+  height: 250px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.container__kit .step__kit .kit p {
+  color: #000000;
+  padding: 25px 0;
+  text-align: center;
+}
+
+.container__kit .step__kit .kit button {
+  width: 100%;
+  font-size: 0.7em;
+}
+
+/*=====================================
+========= Seccion Contacto =========
+======================================*/
+footer {
+  width: 100%;
+}
+
+.contacto__background {
+  width: 100%;
+  height: 956px;
+  position: absolute;
+}
+
+.contacto__background .contacto__background-img {
+  width: 100%;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.contacto__info {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 51;
+}
+
+.contacto__info .contacto__info-titulo {
+  width: 100%;
+  padding: 50px 0 0 0;
+}
+
+.contacto__redes-ubicacion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 150px 0 0 0;
+}
+
+.contacto__redes-ubicacion .contacto__redes .contacto__redes-box {
+  margin: 0 50px;
+}
+
+.contacto__redes-ubicacion .contacto__redes .contacto__redes-box .contacto__redes-titulo {
+  font-size: 1em;
+  font-family: "JetBrains Mono", monospace;
+  padding: 25px 0;
+}
+
+.contacto__redes-ubicacion .contacto__redes .contacto__redes-box .contacto__red .contacto__red-item {
+  list-style: none;
+}
+
+.contacto__redes-ubicacion .contacto__redes .contacto__redes-box .contacto__red .contacto__red-item .contacto__red-link {
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.contacto__redes-ubicacion .contacto__ubicacion-box {
+  margin: 0 0 150px 0;
+}
+
+.contacto__redes-ubicacion .contacto__ubicacion-box .contacto__ubicacion-content {
+  margin: 0 50px;
+}
+
+.contacto__redes-ubicacion .contacto__ubicacion-box .contacto__ubicacion-content .contacto__ubiacion-titulo {
+  font-size: 1em;
+  font-family: "JetBrains Mono", monospace;
+  padding: 25px 0;
+}
+
+.contacto__redes-ubicacion .contacto__ubicacion-box .contacto__ubicacion-content .contacto__ubicacion-sucursales {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contacto__redes-ubicacion .contacto__ubicacion-box .contacto__ubicacion-content .contacto__ubicacion-sucursales .contacto__ubicacion-sucursal {
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8em;
+  font-weight: 300;
+  padding: 25px 20px;
+}
+
+.contacto__email .contacto__email-direccion {
+  font-size: 1em;
+  padding: 0 50px;
+}
+
+@media (max-width: 600px) {
+  .contacto__redes-ubicacion {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .contacto__ubicacion-sucursales {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contacto__redes-ubicacion {
+    padding: 0;
+  }
+  .format__subtitle {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 900px) {
+  /*=====================================
+    ====== Formatos predefinidos ==========
+    ======================================*/
+  /*=====================================
+    ====== SECCION COMO FUNCIONA ==========
+    ======================================*/
+  .funcion__movil {
+    height: auto;
+  }
+  .container__img {
+    height: 100vh;
+  }
+  .container__img img {
+    height: 100%;
+  }
+  .container__funcion {
+    height: 100vh;
+  }
+  .container__funcion .content__funcion .title__funciona {
+    top: 0;
+  }
+  /*=====================================
+    ======== SECCION PRECIOS =========
+    ======================================*/
+  /*=====================================
+    =============== Reseñas ==============
+    ======================================*/
+  /*=====================================
+    ========= Kits de comida CTM =========
+    ======================================*/
+  .container__kit .content__kit div {
+    width: 90%;
+  }
+  .container__kit .content__kit div .kit__flex {
+    padding: 25px 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  /*=====================================
+    ========= Seccion Contacto =========
+    ======================================*/
+  .footer__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

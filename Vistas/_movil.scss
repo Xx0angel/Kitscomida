@@ -1,0 +1,63 @@
+$break__point: 900px;
+
+@media (max-width: $break__point) {
+    /*=====================================
+    ====== Formatos predefinidos ==========
+    ======================================*/
+
+    /*=====================================
+    ====== SECCION COMO FUNCIONA ==========
+    ======================================*/
+    .funcion__movil {
+        height: auto;
+    }
+
+    .container__img {
+        height: 100vh;
+        img {
+            height: 100%;
+        }
+    }
+
+    .container__funcion {
+        height: 100vh;
+        .content__funcion {
+            .title__funciona {
+                top: 0;
+            }
+        }
+    }
+
+    /*=====================================
+    ======== SECCION PRECIOS =========
+    ======================================*/
+    // .container__steps {
+    //     gap: 25px;
+    // }
+
+    /*=====================================
+    =============== Reseñas ==============
+    ======================================*/
+    
+
+    /*=====================================
+    ========= Kits de comida CTM =========
+    ======================================*/
+    .container__kit {
+        .content__kit {
+            div {
+                width: 90%;
+                .kit__flex {
+                    padding: 25px 0;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+    /*=====================================
+    ========= Seccion Contacto =========
+    ======================================*/
+    .footer__info{
+        flex-direction: column;
+    }
+}
