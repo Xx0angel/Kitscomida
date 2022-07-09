@@ -221,7 +221,7 @@ Una clase principal y las sublclases en las que va el contenido del grid
 .container__funcion .content__funcion .title__funciona {
   position: relative;
   display: block;
-  width: 90%;
+  width: 100%;
 }
 
 .container__funcion .content__funcion .title__funciona div h3 {
